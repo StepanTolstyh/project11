@@ -1,0 +1,29 @@
+ 
+ <style>
+    .row-1 { background: rgb(216, 34, 201); }
+    .row { background: rgb(14, 185, 190); }
+</style>
+  <div class="row-1" >
+  <div class="col" > Имя:
+  <input type="text" class="form-control" placeholder=" Unkown" id="Name" #Name style="width:100px">
+  Статус:   
+  <br>
+  <select class="custom-select" id="Color" #Color style="width:100px">
+  <option value="rgb(0, 255, 0)">ONline</option>
+  <option value="rgb(255, 0, 0)">OFFline</option>
+  </select>   
+  <button class="btn btn-primary" (click)="add(Name.value,Color.value)">Добавить</button>
+  </div>
+  </div>
+  <div class="container">
+  <div class="row">
+  <div class="card"  *ngFor="let Cards of Cards" [style.background-color]="Cards.color">
+  <div class="card-body">
+  <h1 class="card-title">Датчик #{{Cards.idcr }}</h1>
+  <p class="card-text">Имя:{{Cards.name}}</p>
+  <a href="#" class="btn btn-primary" (click)="delete(Cards.idcr)">Удалить</a>
+  </div>
+  </div>
+  </div>
+  </div>
+  
